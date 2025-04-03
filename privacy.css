@@ -1,0 +1,207 @@
+/* Privacy Policy Page Specific Styles */
+
+/* Hero Section */
+.privacy-hero {
+  background-image: url("https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+  height: 40vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.privacy-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Privacy Section */
+.privacy-section {
+  padding: 60px 0;
+  background-color: #f9f9f9;
+}
+
+.privacy-content {
+  background: white;
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.last-updated {
+  text-align: right;
+  color: #777;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.policy-intro {
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  border-left: 4px solid var(--primary-color);
+  padding-left: 20px;
+}
+
+.policy-navigation {
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.policy-navigation h2 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.policy-navigation ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.policy-navigation ul li {
+  margin-bottom: 10px;
+}
+
+.policy-navigation ul li a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: rgba(103, 103, 179, 0.1);
+  transition: all 0.3s ease;
+}
+
+.policy-navigation ul li a:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+.policy-section {
+  margin-bottom: 40px;
+  padding-top: 20px;
+}
+
+.policy-section h2 {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.policy-section h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--gradient-primary);
+}
+
+.policy-section h3 {
+  color: var(--secondary-color);
+  font-size: 1.3rem;
+  margin: 20px 0 10px;
+}
+
+.policy-section p {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.policy-section ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.policy-section ul li {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+.contact-details {
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.contact-details p {
+  margin-bottom: 5px;
+}
+
+.contact-details a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-details a:hover {
+  color: var(--accent-color);
+}
+
+/* Animations */
+.reveal-text {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.reveal-text.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .privacy-hero {
+    height: 30vh;
+  }
+
+  .privacy-content {
+    padding: 20px;
+  }
+
+  .policy-navigation ul {
+    flex-direction: column;
+  }
+}
+

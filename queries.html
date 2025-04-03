@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Queries - ROAD BUDDY</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="queries.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Navbar with animated highlight -->
+    <div class="navbar">
+        <div class="logo-container">
+            <h1 class="logo"><span>R</span>oad <span>B</span>uddy</h1>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="services.html" class="nav-link">Services</a></li>
+            <li><a href="login.html" class="nav-link">Login</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section with Parallax -->
+    <div class="queries-hero" id="parallax">
+        <div class="hero-content">
+            <h1 class="hero-title fade-in">Queries</h1>
+            <p class="hero-subtitle fade-in">Get answers to your questions or submit a new query</p>
+        </div>
+    </div>
+
+    <!-- Queries Section -->
+    <section class="queries-section">
+        <div class="container">
+            <div class="queries-wrapper">
+                <div class="search-container reveal-text">
+                    <h2>Search for Answers</h2>
+                    <div class="search-box">
+                        <input type="text" id="search-input" placeholder="Type your question here...">
+                        <button id="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="search-tags">
+                        <span>Popular:</span>
+                        <a href="#" class="tag" data-tag="payment">Payment</a>
+                        <a href="#" class="tag" data-tag="account">Account</a>
+                        <a href="#" class="tag" data-tag="booking">Booking</a>
+                        <a href="#" class="tag" data-tag="safety">Safety</a>
+                        <a href="#" class="tag" data-tag="refund">Refund</a>
+                    </div>
+                </div>
+                
+                <div class="queries-content">
+                    <div class="queries-tabs">
+                        <button class="tab-btn active" data-tab="faq">Frequently Asked Questions</button>
+                        <button class="tab-btn" data-tab="submit">Submit a Query</button>
+                    </div>
+                    
+                    <div class="tab-content">
+                        <!-- FAQ Tab -->
+                        <div class="tab-pane active" id="faq">
+                            <div class="faq-categories">
+                                <button class="category-btn active" data-category="all">All</button>
+                                <button class="category-btn" data-category="account">Account</button>
+                                <button class="category-btn" data-category="booking">Booking</button>
+                                <button class="category-btn" data-category="payment">Payment</button>
+                                <button class="category-btn" data-category="safety">Safety</button>
+                                <button class="category-btn" data-category="other">Other</button>
+                            </div>
+                            
+                            <div class="faq-container">
+                                <div class="faq-item" data-category="account">
+                                    <div class="faq-question">
+                                        <h3>How do I create an account?</h3>
+                                        <span class="faq-icon">+</span>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <p>Creating an account is simple. Download our app or visit our website, click on "Sign Up," and follow the instructions. You'll need to provide your name, email address, phone number, and create a password. You'll also need to verify your email and phone number for security purposes.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item" data-category="account">
+                                    <div class="faq-question">
+                                        <h3>How do I reset my password?</h3>
+                                        <span class="faq-icon">+</span>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <p>To reset your password, click on the "Forgot Password" link on the login page. Enter your registered email address, and we'll send you a password reset link. Click on the link in the email and follow the instructions to create a new password.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item" data-category="booking">
+                                    <div class="faq-question">
+                                        <h3>How do I book a ride?</h3>
+                                        <span class="faq-icon">+</span>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <p>To book a ride, open the app and enter your pickup location and destination. Choose the "Find Ride" option, and you'll see available rides matching your route. Browse through the options, check rider profiles and ratings, and select the ride that suits you best. Confirm your booking by making the payment.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item" data-category="booking">
+                                    <div class="faq-question">
+                                        <h3>Can I schedule a ride in advance?</h3>
+                                        <span class="faq-icon">+</span>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <p>Yes, you can schedule rides in advance. When searching for a ride, select the "Schedule" option and choose your preferred date and time. Regular users can schedule rides up to 3 days ahead, while Premium users can book up to 7 days in advance.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item" data-category="payment">
+                                    <div class="faq-question">
+                                        <h3>What payment methods are accepted?</h3>
+                                        <span class="faq-icon">+</span>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <p>We accept various payment methods including credit/debit cards, UPI, digital wallets like Paytm and Google Pay, and net banking. You can add your preferred payment methods in the "Payment" section of your profile.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item" data-category="payment">
+                                    <div class="faq-question">
+                                        <h3>How do refunds work?</h3>
+                                        <span class="faq-icon">+</span>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <p>If you cancel a ride more than 24 hours before the scheduled time, you'll receive a full refund excluding the service fee. For cancellations within 24 hours, a partial refund will be issued based on our cancellation policy. If the ride provider cancels, you'll receive a full refund including the service fee.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item" data-category="safety">
+                                    <div class="faq-question">
+                                        <h3>How does Road Buddy ensure safety?</h3>
+                                        <span class="faq-icon">+</span>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <p>We prioritize safety through multiple measures including identity verification, profile ratings, real-time ride tracking, and an emergency SOS button. All users undergo a verification process, and we maintain a community rating system to ensure only trusted individuals use our platform.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item" data-category="safety">
+                                    <div class="faq-question">
+                                        <h3>What should I do in case of an emergency during a ride?</h3>
+                                        <span class="faq-icon">+</span>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <p>In case of an emergency, use the SOS button in the app which will alert our emergency response team and share your real-time location. You can also directly call emergency services through the app. We recommend sharing your ride details with a trusted contact before starting your journey.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item" data-category="other">
+                                    <div class="faq-question">
+                                        <h3>How do I become a ride provider?</h3>
+                                        <span class="faq-icon">+</span>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <p>To become a ride provider, go to the "Offer Ride" section in the app. You'll need to complete additional verification steps including vehicle registration, driving license verification, and insurance details. Once approved, you can start offering rides on your regular routes.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item" data-category="other">
+                                    <div class="faq-question">
+                                        <h3>Is Road Buddy available in my city?</h3>
+                                        <span class="faq-icon">+</span>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <p>Road Buddy is currently available in major cities across India including Delhi, Mumbai, Bangalore, Chennai, Hyderabad, Pune, and Kolkata. We're rapidly expanding to other cities. Check the app or website for the most up-to-date information on service availability in your area.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="no-results" style="display: none;">
+                                <div class="no-results-content">
+                                    <i class="fas fa-search"></i>
+                                    <h3>No results found</h3>
+                                    <p>We couldn't find answers matching your search. Please try different keywords or submit your query.</p>
+                                    <button class="submit-query-btn">Submit Your Query</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Submit Query Tab -->
+                        <div class="tab-pane" id="submit">
+                            <div class="query-form-container">
+                                <h2>Submit Your Query</h2>
+                                <p>Can't find what you're looking for? Submit your question and our team will get back to you within 24 hours.</p>
+                                
+                                <form class="query-form">
+                                    <div class="form-group">
+                                        <label for="name">Your Name</label>
+                                        <input type="text" id="name" placeholder="Enter your name" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="email">Email Address</label>
+                                        <input type="email" id="email" placeholder="Enter your email" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="category">Query Category</label>
+                                        <select id="category" required>
+                                            <option value="" disabled selected>Select a category</option>
+                                            <option value="account">Account</option>
+                                            <option value="booking">Booking</option>
+                                            <option value="payment">Payment</option>
+                                            <option value="safety">Safety</option>
+                                            <option value="technical">Technical Issue</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="subject">Subject</label>
+                                        <input type="text" id="subject" placeholder="Enter subject" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="message">Your Query</label>
+                                        <textarea id="message" rows="5" placeholder="Describe your query in detail" required></textarea>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="attachment">Attachment (Optional)</label>
+                                        <div class="file-upload">
+                                            <input type="file" id="attachment">
+                                            <div class="file-upload-label">
+                                                <i class="fas fa-cloud-upload-alt"></i>
+                                                <span>Choose a file</span>
+                                            </div>
+                                            <div class="file-name"></div>
+                                        </div>
+                                        <p class="file-info">Max file size: 5MB (JPG, PNG, PDF)</p>
+                                    </div>
+                                    
+                                    <button type="submit" class="submit-btn">Submit Query</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Support Section -->
+    <section class="contact-support">
+        <div class="container">
+            <div class="support-wrapper">
+                <div class="support-content">
+                    <h2>Need Immediate Assistance?</h2>
+                    <p>Our customer support team is available 24/7 to help you with any issues or questions.</p>
+                    <div class="support-options">
+                        <div class="support-option">
+                            <div class="support-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <h3>Call Us</h3>
+                            <p>+91 9876543210</p>
+                            <p class="support-time">Available 24/7</p>
+                        </div>
+                        
+                        <div class="support-option">
+                            <div class="support-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <h3>Live Chat</h3>
+                            <p>Chat with our support team</p>
+                            <button class="chat-btn">Start Chat</button>
+                        </div>
+                        
+                        <div class="support-option">
+                            <div class="support-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h3>Email Us</h3>
+                            <p>support@roadbuddy.in</p>
+                            <p class="support-time">Response within 24 hours</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer with Animated Elements -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>We are committed to delivering dependable and sustainable transportation solutions, ensuring that travel remains both affordable and accessible to all individuals.</p>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:info@roadbuddy.in">info@roadbuddy.in</a></p>
+                <p>Phone: +91 9876543210</p>
+                <p>Address: Amritanagar Post, Ettimadai, Coimbatore 641 112, Tamil Nadu, INDIA</p>
+                <ul>
+                    <li><a href="feedback.html">FeedBack</a></li>
+                    <li><a href="queries.html">Queries</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="newsletter">
+                    <h4>Subscribe to our Newsletter</h4>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+  
+    <div class="footer-bottom">
+        <p>© 2024 Travel Company | All Rights Reserved by RoadBuddy</p>
+    </div>
+
+    <!-- Emergency Button -->
+    <button class="emergency-btn" id="emergencyBtn">
+        <i class="fas fa-exclamation-triangle"></i>
+        <span class="emergency-tooltip">Emergency</span>
+    </button>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js"></script>
+    <script src="index.js"></script>
+    <script src="queries.js"></script>
+</body>
+</html>
+

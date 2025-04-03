@@ -1,0 +1,248 @@
+/* Sign Up Page Styles */
+.signup-container {
+    padding-top: 30px;
+    padding-bottom: 80px;
+}
+
+.map-animation {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: pulse 2s infinite;
+}
+
+.map-animation i {
+    font-size: 60px;
+    color: white;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.password-strength {
+    margin-top: 8px;
+}
+
+.strength-meter {
+    height: 4px;
+    background-color: #e0e0e0;
+    border-radius: 2px;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+
+.strength-bar {
+    height: 100%;
+    width: 0;
+    border-radius: 2px;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.strength-text {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.terms-check {
+    display: flex;
+    align-items: flex-start;
+}
+
+.terms-check input {
+    margin-right: 8px;
+    margin-top: 3px;
+}
+
+.terms-check label {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+.terms-check a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.terms-check a:hover {
+    text-decoration: underline;
+}
+
+/* Progress Steps */
+.progress-container {
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
+    margin: -50px auto 30px;
+    position: relative;
+    z-index: 20;
+}
+
+.progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    flex: 1;
+    max-width: 150px;
+}
+
+.progress-step::before,
+.progress-step::after {
+    content: '';
+    position: absolute;
+    top: 25px;
+    height: 3px;
+    background-color: #ddd;
+    z-index: -1;
+}
+
+.progress-step::before {
+    left: 0;
+    right: 50%;
+}
+
+.progress-step::after {
+    right: 0;
+    left: 50%;
+}
+
+.progress-step:first-child::before {
+    display: none;
+}
+
+.progress-step:last-child::after {
+    display: none;
+}
+
+.step-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #777;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.step-text {
+    font-size: 0.9rem;
+    color: #777;
+    transition: all 0.3s ease;
+}
+
+.progress-step.active .step-icon {
+    background: var(--gradient-primary);
+    color: white;
+    box-shadow: 0 0 0 5px rgba(74, 74, 138, 0.2);
+}
+
+.progress-step.active .step-text {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.progress-step.active::before,
+.progress-step.active::after {
+    background-color: var(--primary-color);
+}
+
+.progress-step.completed .step-icon {
+    background: #4CAF50;
+    color: white;
+}
+
+.progress-step.completed::before,
+.progress-step.completed::after {
+    background-color: #4CAF50;
+}
+
+/* Animation for steps */
+.progress-step {
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.progress-step:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.progress-step:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.progress-step:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform:  {
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .progress-container {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+    
+    .progress-step {
+        flex-direction: row;
+        width: 100%;
+        margin-bottom: 15px;
+        max-width: none;
+    }
+    
+    .progress-step::before,
+    .progress-step::after {
+        display: none;
+    }
+    
+    .step-icon {
+        margin-bottom: 0;
+        margin-right: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .form-box {
+        padding: 25px 15px;
+    }
+}

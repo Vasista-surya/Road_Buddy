@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Feedback - ROAD BUDDY</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="feedback.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Navbar with animated highlight -->
+    <div class="navbar">
+        <div class="logo-container">
+            <h1 class="logo"><span>R</span>oad <span>B</span>uddy</h1>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="services.html" class="nav-link">Services</a></li>
+            <li><a href="login.html" class="nav-link">Login</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section with Parallax -->
+    <div class="feedback-hero" id="parallax">
+        <div class="hero-content">
+            <h1 class="hero-title fade-in">Your Feedback Matters</h1>
+            <p class="hero-subtitle fade-in">Help us improve your Road Buddy experience</p>
+        </div>
+    </div>
+
+    <!-- Feedback Section -->
+    <section class="feedback-section">
+        <div class="container">
+            <div class="feedback-intro reveal-text">
+                <h2>We Value Your Opinion</h2>
+                <p>At Road Buddy, we're constantly striving to improve our services and provide the best possible experience for our users. Your feedback is invaluable in helping us understand what we're doing right and where we can do better.</p>
+                <p>Please take a few minutes to share your thoughts with us. Whether you've had a great experience or encountered issues, we want to hear from you!</p>
+            </div>
+            
+            <div class="feedback-types">
+                <div class="feedback-card slide-in-left">
+                    <div class="feedback-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Rate Your Experience</h3>
+                    <p>Share your overall satisfaction with our service and help us understand what matters most to you.</p>
+                    <a href="#rating-section" class="feedback-link">Rate Now</a>
+                </div>
+                
+                <div class="feedback-card slide-in-right">
+                    <div class="feedback-icon">
+                        <i class="fas fa-comment-alt"></i>
+                    </div>
+                    <h3>Detailed Feedback</h3>
+                    <p>Provide specific feedback about your experience, suggestions for improvement, or report issues.</p>
+                    <a href="#detailed-section" class="feedback-link">Give Feedback</a>
+                </div>
+            </div>
+            
+            <!-- Rating Section -->
+            <div id="rating-section" class="rating-section reveal-text">
+                <h2>Rate Your Experience</h2>
+                <div class="rating-container">
+                    <div class="rating-categories">
+                        <div class="rating-category">
+                            <h3>Overall Experience</h3>
+                            <div class="star-rating" data-category="overall">
+                                <i class="far fa-star" data-value="1"></i>
+                                <i class="far fa-star" data-value="2"></i>
+                                <i class="far fa-star" data-value="3"></i>
+                                <i class="far fa-star" data-value="4"></i>
+                                <i class="far fa-star" data-value="5"></i>
+                                <span class="rating-text">Click to rate</span>
+                            </div>
+                        </div>
+                        
+                        <div class="rating-category">
+                            <h3>Ease of Use</h3>
+                            <div class="star-rating" data-category="ease">
+                                <i class="far fa-star" data-value="1"></i>
+                                <i class="far fa-star" data-value="2"></i>
+                                <i class="far fa-star" data-value="3"></i>
+                                <i class="far fa-star" data-value="4"></i>
+                                <i class="far fa-star" data-value="5"></i>
+                                <span class="rating-text">Click to rate</span>
+                            </div>
+                        </div>
+                        
+                        <div class="rating-category">
+                            <h3>Ride Quality</h3>
+                            <div class="star-rating" data-category="quality">
+                                <i class="far fa-star" data-value="1"></i>
+                                <i class="far fa-star" data-value="2"></i>
+                                <i class="far fa-star" data-value="3"></i>
+                                <i class="far fa-star" data-value="4"></i>
+                                <i class="far fa-star" data-value="5"></i>
+                                <span class="rating-text">Click to rate</span>
+                            </div>
+                        </div>
+                        
+                        <div class="rating-category">
+                            <h3>Value for Money</h3>
+                            <div class="star-rating" data-category="value">
+                                <i class="far fa-star" data-value="1"></i>
+                                <i class="far fa-star" data-value="2"></i>
+                                <i class="far fa-star" data-value="3"></i>
+                                <i class="far fa-star" data-value="4"></i>
+                                <i class="far fa-star" data-value="5"></i>
+                                <span class="rating-text">Click to rate</span>
+                            </div>
+                        </div>
+                        
+                        <div class="rating-category">
+                            <h3>Customer Support</h3>
+                            <div class="star-rating" data-category="support">
+                                <i class="far fa-star" data-value="1"></i>
+                                <i class="far fa-star" data-value="2"></i>
+                                <i class="far fa-star" data-value="3"></i>
+                                <i class="far fa-star" data-value="4"></i>
+                                <i class="far fa-star" data-value="5"></i>
+                                <span class="rating-text">Click to rate</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="rating-comment">
+                        <h3>Additional Comments</h3>
+                        <textarea placeholder="Tell us more about your ratings (optional)"></textarea>
+                    </div>
+                    
+                    <button class="submit-rating-btn">Submit Ratings</button>
+                </div>
+            </div>
+            
+            <!-- Detailed Feedback Section -->
+            <div id="detailed-section" class="detailed-section reveal-text">
+                <h2>Detailed Feedback</h2>
+                <div class="feedback-form-container">
+                    <form class="feedback-form">
+                        <div class="form-group">
+                            <label for="feedback-name">Your Name</label>
+                            <input type="text" id="feedback-name" placeholder="Enter your name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="feedback-email">Email Address</label>
+                            <input type="email" id="feedback-email" placeholder="Enter your email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="feedback-type">Feedback Type</label>
+                            <select id="feedback-type" required>
+                                <option value="" disabled selected>Select feedback type</option>
+                                <option value="suggestion">Suggestion</option>
+                                <option value="compliment">Compliment</option>
+                                <option value="issue">Issue Report</option>
+                                <option value="feature">Feature Request</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="feedback-subject">Subject</label>
+                            <input type="text" id="feedback-subject" placeholder="Brief description of your feedback" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="feedback-message">Your Feedback</label>
+                            <textarea id="feedback-message" rows="6" placeholder="Please provide detailed feedback" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="feedback-attachment">Attachment (Optional)</label>
+                            <div class="file-upload">
+                                <input type="file" id="feedback-attachment">
+                                <div class="file-upload-label">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <span>Choose a file</span>
+                                </div>
+                                <div class="file-name"></div>
+                            </div>
+                            <p class="file-info">Max file size: 5MB (JPG, PNG, PDF)</p>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="contact-permission">
+                            <label for="contact-permission">I agree to be contacted regarding my feedback if necessary</label>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Submit Feedback</button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Testimonials Section -->
+            <div class="testimonials-section reveal-text">
+                <h2>What Others Are Saying</h2>
+                <div class="testimonials-container" id="testimonials-slider">
+                    <div class="testimonial active">
+                        <div class="testimonial-content">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"Road Buddy has completely transformed my daily commute. The app is intuitive, the rides are reliable, and the community is amazing. I've saved so much money and made new friends along the way!"</p>
+                            <div class="testimonial-author">
+                                <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="User">
+                                <div>
+                                    <h4>Arjun Mehta</h4>
+                                    <p>Regular User</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p>"As someone who offers rides, Road Buddy has helped me offset my fuel costs while making my journey more enjoyable with good company. The payment system is seamless and the support team is always responsive."</p>
+                            <div class="testimonial-author">
+                                <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="User">
+                                <div>
+                                    <h4>Neha Kapoor</h4>
+                                    <p>Ride Provider</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"The safety features and verification process give me peace of mind when sharing rides. I suggested adding an emergency contact feature last year, and they implemented it within a month! They really listen to user feedback."</p>
+                            <div class="testimonial-author">
+                                <img src="https://randomuser.me/api/portraits/women/26.jpg" alt="User">
+                                <div>
+                                    <h4>Ritu Sharma</h4>
+                                    <p>Student</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-controls">
+                    <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <div class="testimonial-dots">
+                        <span class="dot active" data-index="0"></span>
+                        <span class="dot" data-index="1"></span>
+                        <span class="dot" data-index="2"></span>
+                    </div>
+                    <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Thank You Modal -->
+    <div class="modal" id="thank-you-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="thank-you-content">
+                <i class="fas fa-check-circle"></i>
+                <h2>Thank You!</h2>
+                <p>Your feedback has been submitted successfully. We appreciate you taking the time to help us improve.</p>
+                <button class="modal-btn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer with Animated Elements -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>We are committed to delivering dependable and sustainable transportation solutions, ensuring that travel remains both affordable and accessible to all individuals.</p>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:info@roadbuddy.in">info@roadbuddy.in</a></p>
+                <p>Phone: +91 9876543210</p>
+                <p>Address: Amritanagar Post, Ettimadai, Coimbatore 641 112, Tamil Nadu, INDIA</p>
+                <ul>
+                    <li><a href="feedback.html">FeedBack</a></li>
+                    <li><a href="queries.html">Queries</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="newsletter">
+                    <h4>Subscribe to our Newsletter</h4>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+  
+    <div class="footer-bottom">
+        <p>© 2024 Travel Company | All Rights Reserved by RoadBuddy</p>
+    </div>
+
+    <!-- Emergency Button -->
+    <button class="emergency-btn" id="emergencyBtn">
+        <i class="fas fa-exclamation-triangle"></i>
+        <span class="emergency-tooltip">Emergency</span>
+    </button>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js"></script>
+    <script src="index.js"></script>
+    <script src="feedback.js"></script>
+</body>
+</html>
+

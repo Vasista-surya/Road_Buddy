@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Road Buddy</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div class="splash-screen">
+        <div class="splash-content">
+            <div class="splash-logo">
+                <svg viewBox="0 0 100 100" class="logo-animation">
+                    <circle cx="50" cy="50" r="40" class="logo-circle" />
+                    <path d="M30,50 L70,50" class="logo-path" />
+                    <path d="M50,30 L50,70" class="logo-path" />
+                </svg>
+            </div>
+            <h1 class="splash-title">ROAD BUDDY</h1>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main App Container -->
+    <div class="app-container">
+        <!-- Top Navigation -->
+        <header class="top-nav">
+            <div class="nav-left">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class='bx bx-trip'></i>
+                    </div>
+                    <h1>Road<span>Buddy</span></h1>
+                </div>
+            </div>
+            
+            <div class="nav-center">
+                <nav class="main-nav">
+                    <a href="#dashboard" class="nav-item active" data-page="dashboard">
+                        <i class='bx bx-grid-alt'></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="#post-ride" class="nav-item" data-page="post-ride">
+                        <i class='bx bx-plus-circle'></i>
+                        <span>Post Ride</span>
+                    </a>
+                    <a href="#find-ride" class="nav-item" data-page="find-ride">
+                        <i class='bx bx-search-alt'></i>
+                        <span>Find Ride</span>
+                    </a>
+                    <a href="#my-rides" class="nav-item" data-page="my-rides">
+                        <i class='bx bx-list-ul'></i>
+                        <span>My Rides</span>
+                    </a>
+                    <a href="#settings" class="nav-item" data-page="settings">
+                        <i class='bx bx-cog'></i>
+                        <span>Settings</span>
+                    </a>
+                </nav>
+            </div>
+            
+            <div class="nav-right">
+                <div class="notifications">
+                    <i class='bx bx-bell'></i>
+                    <span class="notification-badge">3</span>
+                    <div class="notifications-dropdown">
+                        <div class="notifications-header">
+                            <h3>Notifications</h3>
+                            <button class="mark-all-read">Mark all as read</button>
+                        </div>
+                        <div class="notifications-list">
+                            <div class="notification-item unread">
+                                <div class="notification-icon ride">
+                                    <i class='bx bx-car'></i>
+                                </div>
+                                <div class="notification-content">
+                                    <p>Welcome to Road Buddy!</p>
+                                    <span class="notification-time">Just now</span>
+                                </div>
+                                <div class="notification-action">
+                                    <button class="notification-mark-read"><i class='bx bx-check'></i></button>
+                                </div>
+                            </div>
+                            <div class="notification-item unread">
+                                <div class="notification-icon rating">
+                                    <i class='bx bx-star'></i>
+                                </div>
+                                <div class="notification-content">
+                                    <p>Complete your profile to get started</p>
+                                    <span class="notification-time">Just now</span>
+                                </div>
+                                <div class="notification-action">
+                                    <button class="notification-mark-read"><i class='bx bx-check'></i></button>
+                                </div>
+                            </div>
+                            <div class="notification-item unread">
+                                <div class="notification-icon payment">
+                                    <i class='bx bx-wallet'></i>
+                                </div>
+                                <div class="notification-content">
+                                    <p>Add a payment method to book rides</p>
+                                    <span class="notification-time">Just now</span>
+                                </div>
+                                <div class="notification-action">
+                                    <button class="notification-mark-read"><i class='bx bx-check'></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="notifications-footer">
+                            <a href="#notifications-page">View all notifications</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-profile" id="user-profile">
+                    <img src="images/vasista.jpg" alt="User Profile">
+                    <div class="user-menu">
+                        <div class="user-info">
+                            <div class="user-avatar">
+                                <img src="images/vasista.jpg" alt="User Profile">
+                                <div class="user-status online"></div>
+                            </div>
+                            <div class="user-details">
+                                <h3>Kundan</h3>
+                                <p>New User</p>
+                                <div class="user-badges">
+                                    <span class="user-badge verified"><i class='bx bx-check'></i> New</span>
+                                </div>
+                            </div>
+                            <div class="user-stats">
+                                <div class="user-stat">
+                                    <span class="stat-value">0</span>
+                                    <span class="stat-label">Rides</span>
+                                </div>
+                                <div class="user-stat">
+                                    <span class="stat-value">-</span>
+                                    <span class="stat-label">Rating</span>
+                                </div>
+                                <div class="user-stat">
+                                    <span class="stat-value">₹0</span>
+                                    <span class="stat-label">Wallet</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="menu-options">
+                            <li><a href="#profile"><i class='bx bx-user'></i> Profile</a></li>
+                            <li><a href="#settings" class="settings-link" data-settings="account"><i class='bx bx-cog'></i> Settings</a></li>
+                            <li><a href="#wallet"><i class='bx bx-wallet'></i> Wallet</a></li>
+                            <li><a href="#" id="logout-trigger"><i class='bx bx-log-out'></i> Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Search Overlay -->
+        <div class="search-overlay">
+            <div class="search-container">
+                <div class="search-header">
+                    <h2>Search</h2>
+                    <button class="close-search"><i class='bx bx-x'></i></button>
+                </div>
+                <div class="search-input-container">
+                    <i class='bx bx-search'></i>
+                    <input type="text" placeholder="Search for rides, locations, or users...">
+                </div>
+                <div class="quick-filters">
+                    <span class="filter-tag">Nearby</span>
+                    <span class="filter-tag">Today</span>
+                    <span class="filter-tag">Bike</span>
+                    <span class="filter-tag">Car</span>
+                </div>
+                <div class="recent-searches">
+                    <h3>Popular Searches</h3>
+                    <ul>
+                        <li><i class='bx bx-history'></i> Amritanagar to Coimbatore</li>
+                        <li><i class='bx bx-history'></i> Chennai to Bangalore</li>
+                        <li><i class='bx bx-history'></i> Weekend rides</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Dashboard Page -->
+            <section class="page active" id="dashboard-page">
+                <div class="page-header">
+                    <h1>Welcome to Road Buddy!</h1>
+                    <p>Start your journey by posting or finding a ride</p>
+                    <!-- <div class="quick-actions">
+                        <button class="action-btn" id="post-ride-btn">
+                            <i class='bx bx-plus'></i>
+                            <span>Post a Ride</span>
+                        </button>
+                        <button class="action-btn" id="find-ride-btn">
+                            <i class='bx bx-search'></i>
+                            <span>Find a Ride</span>
+                        </button>
+                    </div> -->
+                </div>
+
+                <div class="dashboard-layout">
+                    <!-- Stats Section -->
+                    <div class="dashboard-section stats-section">
+                        <div class="stat-card total-rides">
+                            <div class="stat-icon">
+                                <i class='bx bx-car'></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value">0</span>
+                                <span class="stat-label">Total Rides</span>
+                            </div>
+                            <div class="stat-trend up">
+                                <i class='bx bx-up-arrow-alt'></i>
+                                <span>Start today!</span>
+                            </div>
+                        </div>
+                        <div class="stat-card distance">
+                            <div class="stat-icon">
+                                <i class='bx bx-map'></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value">0</span>
+                                <span class="stat-label">Kilometers</span>
+                            </div>
+                            <div class="stat-trend up">
+                                <i class='bx bx-up-arrow-alt'></i>
+                                <span>Ready to travel</span>
+                            </div>
+                        </div>
+                        <div class="stat-card savings">
+                            <div class="stat-icon">
+                                <i class='bx bx-wallet'></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value">₹0</span>
+                                <span class="stat-label">Money Saved</span>
+                            </div>
+                            <div class="stat-trend up">
+                                <i class='bx bx-up-arrow-alt'></i>
+                                <span>Save by sharing</span>
+                            </div>
+                        </div>
+                        <div class="stat-card eco">
+                            <div class="stat-icon">
+                                <i class='bx bx-leaf'></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value">0</span>
+                                <span class="stat-label">CO₂ Reduced (kg)</span>
+                            </div>
+                            <div class="stat-trend up">
+                                <i class='bx bx-up-arrow-alt'></i>
+                                <span>Go green!</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Popular Routes Section -->
+                    <div class="dashboard-section routes-section">
+                        <div class="section-header">
+                            <h2>Popular Routes</h2>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="routes-grid">
+                            <div class="route-card">
+                                <div class="route-image">
+                                    <img src="/placeholder.svg?height=150&width=300" alt="Route">
+                                    <div class="route-overlay">
+                                        <h3>Amritanagar to Coimbatore</h3>
+                                    </div>
+                                </div>
+                                <div class="route-stats">
+                                    <div class="route-stat">
+                                        <i class='bx bx-car'></i>
+                                        <span>15 rides</span>
+                                    </div>
+                                    <div class="route-stat">
+                                        <i class='bx bx-cycling'></i>
+                                        <span>8 rides</span>
+                                    </div>
+                                    <div class="route-price">
+                                        <span>From ₹120</span>
+                                    </div>
+                                </div>
+                                <button class="btn-primary full-width">Find Rides</button>
+                            </div>
+                            <div class="route-card">
+                                <div class="route-image">
+                                    <img src="/placeholder.svg?height=150&width=300" alt="Route">
+                                    <div class="route-overlay">
+                                        <h3>Coimbatore to Chennai</h3>
+                                    </div>
+                                </div>
+                                <div class="route-stats">
+                                    <div class="route-stat">
+                                        <i class='bx bx-car'></i>
+                                        <span>10 rides</span>
+                                    </div>
+                                    <div class="route-stat">
+                                        <i class='bx bx-cycling'></i>
+                                        <span>5 rides</span>
+                                    </div>
+                                    <div class="route-price">
+                                        <span>From ₹450</span>
+                                    </div>
+                                </div>
+                                <button class="btn-primary full-width">Find Rides</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Environmental Impact Section -->
+                    <div class="dashboard-section impact-section">
+                        <div class="section-header">
+                            <h2>Environmental Impact</h2>
+                        </div>
+                        <div class="impact-content">
+                            <div class="impact-chart">
+                                <div class="circular-progress">
+                                    <div class="inner-circle">
+                                        <span class="progress-value">0%</span>
+                                    </div>
+                                </div>
+                                <p class="impact-label">Carbon Footprint Reduction</p>
+                            </div>
+                            <div class="impact-stats">
+                                <div class="impact-stat">
+                                    <i class='bx bx-tree'></i>
+                                    <div class="stat-text">
+                                        <span class="stat-value">0</span>
+                                        <span class="stat-label">Trees Equivalent</span>
+                                    </div>
+                                </div>
+                                <div class="impact-stat">
+                                    <i class='bx bx-gas-pump'></i>
+                                    <div class="stat-text">
+                                        <span class="stat-value">0</span>
+                                        <span class="stat-label">Liters Fuel Saved</span>
+                                    </div>
+                                </div>
+                                <div class="impact-stat">
+                                    <i class='bx bx-car'></i>
+                                    <div class="stat-text">
+                                        <span class="stat-value">0</span>
+                                        <span class="stat-label">Km Shared</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Post Ride Page -->
+            <section class="page" id="post-ride-page">
+                <div class="page-header">
+                    <h1>Post a Ride</h1>
+                    <p>Share your journey with others</p>
+                </div>
+
+                <div class="post-ride-container">
+                    <div class="form-progress">
+                        <div class="progress-step active" data-step="1">
+                            <div class="step-number">1</div>
+                            <div class="step-label">Route Details</div>
+                        </div>
+                        <div class="progress-connector"></div>
+                        <div class="progress-step" data-step="2">
+                            <div class="step-number">2</div>
+                            <div class="step-label">Vehicle & Seats</div>
+                        </div>
+                        <div class="progress-connector"></div>
+                        <div class="progress-step" data-step="3">
+                            <div class="step-number">3</div>
+                            <div class="step-label">Price & Preferences</div>
+                        </div>
+                    </div>
+
+                    <form id="post-ride-form">
+                        <div class="form-step active" id="step-1">
+                            <div class="transport-selection">
+                                <h3>Select Mode of Transport</h3>
+                                <div class="transport-options">
+                                    <label class="transport-option">
+                                        <input type="radio" name="transport" value="bike" checked>
+                                        <div class="option-content">
+                                            <div class="option-icon">
+                                                <i class='bx bx-cycling'></i>
+                                            </div>
+                                            <div class="option-text">
+                                                <span>Bike</span>
+                                                <p>Perfect for solo travelers</p>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class="transport-option">
+                                        <input type="radio" name="transport" value="car">
+                                        <div class="option-content">
+                                            <div class="option-icon">
+                                                <i class='bx bx-car'></i>
+                                            </div>
+                                            <div class="option-text">
+                                                <span>Car</span>
+                                                <p>Ideal for groups and longer journeys</p>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="origin">Origin</label>
+                                <div class="input-with-icon">
+                                    <i class='bx bx-map-pin'></i>
+                                    <input type="text" id="origin" placeholder="Enter origin location" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="destination">Destination</label>
+                                <div class="input-with-icon">
+                                    <i class='bx bx-map-pin'></i>
+                                    <input type="text" id="destination" placeholder="Enter destination" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="date">Date</label>
+                                    <div class="input-with-icon">
+                                        <i class='bx bx-calendar'></i>
+                                        <input type="date" id="date" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="time">Time</label>
+                                    <div class="input-with-icon">
+                                        <i class='bx bx-time'></i>
+                                        <input type="time" id="time" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn-primary next-step">Continue <i class='bx bx-right-arrow-alt'></i></button>
+                            </div>
+                        </div>
+
+                        <div class="form-step" id="step-2">
+                            <div id="bike-details">
+                                <h3>Bike Details</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="bike-model">Bike Model</label>
+                                        <div class="input-with-icon">
+                                            <i class='bx bx-cycling'></i>
+                                            <input type="text" id="bike-model" placeholder="e.g., Honda CB Hornet">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="bike-number">Bike Number</label>
+                                        <div class="input-with-icon">
+                                            <i class='bx bx-id-card'></i>
+                                            <input type="text" id="bike-number" placeholder="e.g., TN 01 AB 1234">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Bike always has 1 seat, so we don't need to show this option -->
+                                <input type="hidden" id="bike-seats" value="1">
+                            </div>
+
+                            <div id="car-details" style="display: none;">
+                                <h3>Car Details</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="car-model">Car Model</label>
+                                        <div class="input-with-icon">
+                                            <i class='bx bx-car'></i>
+                                            <input type="text" id="car-model" placeholder="e.g., Honda City">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="car-number">Car Number</label>
+                                        <div class="input-with-icon">
+                                            <i class='bx bx-id-card'></i>
+                                            <input type="text" id="car-number" placeholder="e.g., TN 01 AB 1234">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="car-seats">Available Seats</label>
+                                    <div class="seat-selector">
+                                        <button type="button" class="seat-btn" data-seats="1">1 Seat</button>
+                                        <button type="button" class="seat-btn active" data-seats="2">2 Seats</button>
+                                        <button type="button" class="seat-btn" data-seats="3">3 Seats</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn-outline prev-step"><i class='bx bx-left-arrow-alt'></i> Back</button>
+                                <button type="button" class="btn-primary next-step">Continue <i class='bx bx-right-arrow-alt'></i></button>
+                            </div>
+                        </div>
+
+                        <div class="form-step" id="step-3">
+                            <div class="form-group">
+                                <label for="price">Price per Seat (₹)</label>
+                                <div class="input-with-icon">
+                                    <i class='bx bx-rupee'></i>
+                                    <input type="number" id="price" placeholder="Enter price" min="0" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Preferences</label>
+                                <div class="preferences-container">
+                                    <label class="preference-option">
+                                        <input type="checkbox" name="preferences" value="non-smoking">
+                                        <div class="option-content">
+                                            <div class="option-icon">
+                                                <i class='bx bx-no-smoking'></i>
+                                            </div>
+                                            <span>Non-smoking</span>
+                                        </div>
+                                    </label>
+                                    <label class="preference-option">
+                                        <input type="checkbox" name="preferences" value="music">
+                                        <div class="option-content">
+                                            <div class="option-icon">
+                                                <i class='bx bx-music'></i>
+                                            </div>
+                                            <span>Music</span>
+                                        </div>
+                                    </label>
+                                    <label class="preference-option">
+                                        <input type="checkbox" name="preferences" value="women-only">
+                                        <div class="option-content">
+                                            <div class="option-icon">
+                                                <i class='bx bx-female'></i>
+                                            </div>
+                                            <span>Women only</span>
+                                        </div>
+                                    </label>
+                                    <label class="preference-option">
+                                        <input type="checkbox" name="preferences" value="air-conditioned">
+                                        <div class="option-content">
+                                            <div class="option-icon">
+                                                <i class='bx bx-cool'></i>
+                                            </div>
+                                            <span>AC</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="description">Description (Optional)</label>
+                                <textarea id="description" rows="4" placeholder="Add any additional details about your ride"></textarea>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn-outline prev-step"><i class='bx bx-left-arrow-alt'></i> Back</button>
+                                <button type="submit" class="btn-primary">Post Ride <i class='bx bx-check'></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Find Ride Page -->
+            <section class="page" id="find-ride-page">
+                <div class="page-header">
+                    <h1>Find a Ride</h1>
+                    <p>Search for available rides</p>
+                </div>
+
+                <div class="find-ride-container">
+                    <div class="search-form-container">
+                        <form class="search-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="search-from">From</label>
+                                    <div class="input-with-icon">
+                                        <i class='bx bx-map-pin'></i>
+                                        <input type="text" id="search-from" placeholder="Enter origin">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="search-to">To</label>
+                                    <div class="input-with-icon">
+                                        <i class='bx bx-map-pin'></i>
+                                        <input type="text" id="search-to" placeholder="Enter destination">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="search-date">Date</label>
+                                    <div class="input-with-icon">
+                                        <i class='bx bx-calendar'></i>
+                                        <input type="date" id="search-date">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>&nbsp;</label>
+                                    <button class="btn-primary search-btn">
+                                        <i class='bx bx-search'></i> Search
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="filter-options">
+                            <h3>Transport Type</h3>
+                            <div class="filter-buttons">
+                                <button class="filter-btn active" data-filter="all">All</button>
+                                <button class="filter-btn" data-filter="bike">Bike</button>
+                                <button class="filter-btn" data-filter="car">Car</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="search-results">
+                        <div class="results-header">
+                            <h3>Available Rides</h3>
+                            <div class="sort-options">
+                                <label for="sort-by">Sort by:</label>
+                                <select id="sort-by">
+                                    <option value="departure">Departure Time</option>
+                                    <option value="price">Price: Low to High</option>
+                                    <option value="rating">Rating</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="ride-results">
+                            <div class="result-card">
+                                <div class="driver-info">
+                                    <img src="/placeholder.svg?height=50&width=50" alt="Driver">
+                                    <div class="driver-details">
+                                        <h4>Rahul S.</h4>
+                                        <div class="rating">
+                                            <i class='bx bxs-star'></i>
+                                            <span>4.8</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ride-info">
+                                    <div class="transport-badge bike">
+                                        <i class='bx bx-cycling'></i>
+                                        <span>Bike</span>
+                                    </div>
+                                    <div class="route">
+                                        <div class="route-point">
+                                            <i class='bx bxs-circle start'></i>
+                                            <div class="point-details">
+                                                <h5>Amritanagar</h5>
+                                                <p>Jun 16, 08:00 AM</p>
+                                            </div>
+                                        </div>
+                                        <div class="route-line"></div>
+                                        <div class="route-point">
+                                            <i class='bx bxs-circle end'></i>
+                                            <div class="point-details">
+                                                <h5>Coimbatore</h5>
+                                                <p>Jun 16, 09:30 AM</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ride-features">
+                                        <span class="feature"><i class='bx bx-no-smoking'></i> Non-smoking</span>
+                                        <span class="feature"><i class='bx bx-hard-hat'></i> Helmet provided</span>
+                                    </div>
+                                </div>
+                                <div class="ride-price">
+                                    <h4>₹150</h4>
+                                    <p>per seat</p>
+                                    <span class="seats-left">1 seat left</span>
+                                    <button class="btn-primary book-btn">Book Now</button>
+                                </div>
+                            </div>
+
+                            <div class="result-card">
+                                <div class="driver-info">
+                                    <img src="/placeholder.svg?height=50&width=50" alt="Driver">
+                                    <div class="driver-details">
+                                        <h4>Priya M.</h4>
+                                        <div class="rating">
+                                            <i class='bx bxs-star'></i>
+                                            <span>4.9</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ride-info">
+                                    <div class="transport-badge car">
+                                        <i class='bx bx-car'></i>
+                                        <span>Car</span>
+                                    </div>
+                                    <div class="route">
+                                        <div class="route-point">
+                                            <i class='bx bxs-circle start'></i>
+                                            <div class="point-details">
+                                                <h5>Amritanagar</h5>
+                                                <p>Jun 16, 10:00 AM</p>
+                                            </div>
+                                        </div>
+                                        <div class="route-line"></div>
+                                        <div class="route-point">
+                                            <i class='bx bxs-circle end'></i>
+                                            <div class="point-details">
+                                                <h5>Coimbatore</h5>
+                                                <p>Jun 16, 11:15 AM</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ride-features">
+                                        <span class="feature"><i class='bx bx-cool'></i> AC</span>
+                                        <span class="feature"><i class='bx bx-music'></i> Music</span>
+                                        <span class="feature"><i class='bx bx-briefcase'></i> Luggage</span>
+                                    </div>
+                                </div>
+                                <div class="ride-price">
+                                    <h4>₹180</h4>
+                                    <p>per seat</p>
+                                    <span class="seats-left">3 seats left</span>
+                                    <button class="btn-primary book-btn">Book Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- My Rides Page -->
+            <section class="page" id="my-rides-page">
+                <div class="page-header">
+                    <h1>My Rides</h1>
+                    <div class="tab-navigation">
+                        <button class="tab-btn active" data-tab="posted-rides">Posted Rides</button>
+                        <button class="tab-btn" data-tab="booked-rides">Booked Rides</button>
+                    </div>
+                </div>
+
+                <div class="tab-content active" id="posted-rides">
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Origin</th>
+                                    <th>Destination</th>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Price</th>
+                                    <th>Vehicle Type</th>
+                                    <th>Seats Available</th>
+                                    <th>Seats Booked</th>
+                                    <th>Booked User</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="posted-rides-table">
+                                <!-- Empty state - no rides yet -->
+                                <tr class="empty-state">
+                                    <td colspan="10" class="text-center">
+                                        <p>You haven't posted any rides yet.</p>
+                                        <button class="btn-primary" id="post-first-ride">Post Your First Ride</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="booked-rides">
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Origin</th>
+                                    <th>Destination</th>
+                                    <th>Date</th>
+                                    <th>Vehicle Type</th>
+                                    <th>Seats Booked</th>
+                                    <th>Price</th>
+                                    <th>Driver Name</th>
+                                    <th>Driver Phone</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="booked-rides-table">
+                                <!-- Empty state - no rides yet -->
+                                <tr class="empty-state">
+                                    <td colspan="9" class="text-center">
+                                        <p>You haven't booked any rides yet.</p>
+                                        <button class="btn-primary" id="find-first-ride">Find Your First Ride</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Page -->
+            <section class="page" id="settings-page">
+                <div class="page-header">
+                    <h1>Settings</h1>
+                    <p>Customize your Road Buddy experience</p>
+                </div>
+
+                <div class="settings-container">
+                    <div class="settings-sidebar">
+                        <div class="settings-nav">
+                            <a href="#appearance" class="settings-nav-item active" data-settings="appearance">
+                                <i class='bx bx-palette'></i>
+                                <span>Appearance</span>
+                            </a>
+                            <a href="#notifications" class="settings-nav-item" data-settings="notifications">
+                                <i class='bx bx-bell'></i>
+                                <span>Notifications</span>
+                            </a>
+                            <a href="#privacy" class="settings-nav-item" data-settings="privacy">
+                                <i class='bx bx-lock'></i>
+                                <span>Privacy</span>
+                            </a>
+                            <a href="#account" class="settings-nav-item" data-settings="account">
+                                <i class='bx bx-user'></i>
+                                <span>Account</span>
+                            </a>
+                            <a href="#about" class="settings-nav-item" data-settings="about">
+                                <i class='bx bx-info-circle'></i>
+                                <span>About</span>
+                            </a>
+                            <a href="#how-to-use" class="settings-nav-item" data-settings="how-to-use">
+                                <i class='bx bx-help-circle'></i>
+                                <span>How to Use</span>
+                            </a>
+                            <a href="#payment-methods" class="settings-nav-item" data-settings="payment-methods">
+                                <i class='bx bx-credit-card'></i>
+                                <span>Payment Methods</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="settings-content">
+                        <div class="settings-panel active" id="appearance-panel">
+                            <h2>Appearance</h2>
+                            <div class="settings-section">
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <h3>Theme Mode</h3>
+                                        <p>Choose between light and dark theme</p>
+                                    </div>
+                                    <div class="theme-toggle-container">
+                                        <div class="theme-toggle-wrapper">
+                                            <input type="checkbox" id="theme-toggle-checkbox" class="theme-toggle-checkbox">
+                                            <label for="theme-toggle-checkbox" class="theme-toggle-label">
+                                                <div class="theme-toggle-inner">
+                                                    <div class="theme-toggle-switch">
+                                                        <i class='bx bx-sun sun-icon'></i>
+                                                        <i class='bx bx-moon moon-icon'></i>
+                                                    </div>
+                                                    <div class="theme-toggle-stars"></div>
+                                                    <div class="theme-toggle-clouds"></div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <h3>Color Accent</h3>
+                                        <p>Choose your preferred accent color</p>
+                                    </div>
+                                    <div class="color-options">
+                                        <label class="color-option">
+                                            <input type="radio" name="accent-color" value="blue" checked>
+                                            <span class="color-circle blue"></span>
+                                        </label>
+                                        <label class="color-option">
+                                            <input type="radio" name="accent-color" value="purple">
+                                            <span class="color-circle purple"></span>
+                                        </label>
+                                        <label class="color-option">
+                                            <input type="radio" name="accent-color" value="teal">
+                                            <span class="color-circle teal"></span>
+                                        </label>
+                                        <label class="color-option">
+                                            <input type="radio" name="accent-color" value="orange">
+                                            <span class="color-circle orange"></span>
+                                        </label>
+                                        <label class="color-option">
+                                            <input type="radio" name="accent-color" value="green">
+                                            <span class="color-circle green"></span>
+                                        </label>
+                                        <label class="color-option">
+                                            <input type="radio" name="accent-color" value="red">
+                                            <span class="color-circle red"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-panel" id="notifications-panel">
+                            <h2>Notifications</h2>
+                            <div class="settings-section">
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <h3>Email Notifications</h3>
+                                        <p>Receive ride updates via email</p>
+                                    </div>
+                                    <div class="setting-control">
+                                        <label class="switch">
+                                            <input type="checkbox" checked>
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <h3>SMS Notifications</h3>
+                                        <p>Receive ride updates via SMS</p>
+                                    </div>
+                                    <div class="setting-control">
+                                        <label class="switch">
+                                            <input type="checkbox" checked>
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <h3>Push Notifications</h3>
+                                        <p>Receive push notifications on your device</p>
+                                    </div>
+                                    <div class="setting-control">
+                                        <label class="switch">
+                                            <input type="checkbox" checked>
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-panel" id="privacy-panel">
+                            <h2>Privacy</h2>
+                            <div class="settings-section">
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <h3>Profile Visibility</h3>
+                                        <p>Control who can see your profile</p>
+                                    </div>
+                                    <div class="setting-control">
+                                        <select>
+                                            <option>Everyone</option>
+                                            <option selected>Only Ride Partners</option>
+                                            <option>Private</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <h3>Location Sharing</h3>
+                                        <p>Share your location during rides</p>
+                                    </div>
+                                    <div class="setting-control">
+                                        <label class="switch">
+                                            <input type="checkbox" checked>
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-panel" id="account-panel">
+                            <h2>Account</h2>
+                            <div class="settings-section">
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <h3>Profile Information</h3>
+                                    </div>
+                                </div>
+                                
+                                <div class="profile-form">
+                                    <div class="form-group">
+                                        <label for="profile-name">Full Name</label>
+                                        <div class="input-with-icon">
+                                            <i class='bx bx-user'></i>
+                                            <input type="text" id="profile-name" placeholder="Enter your full name" value="kundhan">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="profile-email">Email Address</label>
+                                        <div class="input-with-icon">
+                                            <i class='bx bx-envelope'></i>
+                                            <input type="email" id="profile-email" placeholder="Enter your email" value="kundhan@gmail.com">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="profile-phone">Phone Number</label>
+                                        <div class="input-with-icon">
+                                            <i class='bx bx-phone'></i>
+                                            <input type="tel" id="profile-phone" placeholder="Enter your phone number" value="+91 98765 43210">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <button class="btn-primary" id="save-profile">Save Changes</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <h3>Change Password</h3>
+                                        <p>Update your account password</p>
+                                    </div>
+                                    <div class="setting-control">
+                                        <button class="btn-outline" id="change-password-btn">Change</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="password-form" style="display: none;">
+                                    <div class="form-group">
+                                        <label for="current-password">Current Password</label>
+                                        <div class="input-with-icon">
+                                            <i class='bx bx-lock'></i>
+                                            <input type="password" id="current-password" placeholder="Enter current password">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="new-password">New Password</label>
+                                        <div class="input-with-icon">
+                                            <i class='bx bx-lock'></i>
+                                            <input type="password" id="new-password" placeholder="Enter new password">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="confirm-password">Confirm New Password</label>
+                                        <div class="input-with-icon">
+                                            <i class='bx bx-lock'></i>
+                                            <input type="password" id="confirm-password" placeholder="Confirm new password">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <button class="btn-primary" id="update-password">Update Password</button>
+                                        <button class="btn-outline" id="cancel-password-change">Cancel</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="setting-item danger">
+                                    <div class="setting-info">
+                                        <h3>Delete Account</h3>
+                                        <p>Permanently delete your account</p>
+                                    </div>
+                                    <div class="setting-control">
+                                        <button class="btn-danger" id="delete-account-btn">Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="settings-panel" id="about-panel">
+                            <h2>About Road Buddy</h2>
+                            <div class="settings-section">
+                                <div class="about-content">
+                                    <div class="app-logo">
+                                        <div class="logo-icon">
+                                            <i class='bx bx-trip'></i>
+                                        </div>
+                                        <h2>Road<span>Buddy</span></h2>
+                                    </div>
+                                    <p class="app-version">Version 1.2.0</p>
+                                    <p class="app-description">
+                                        Road Buddy is a community-based ride-sharing platform designed to make travel more affordable, 
+                                        eco-friendly, and social. Connect with fellow travelers, share rides, and reduce your carbon footprint.
+                                    </p>
+                                    <div class="about-features">
+                                        <div class="feature-item">
+                                            <i class='bx bx-check-circle'></i>
+                                            <span>Find and share rides easily</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class='bx bx-check-circle'></i>
+                                            <span>Save money on transportation</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class='bx bx-check-circle'></i>
+                                            <span>Reduce carbon emissions</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class='bx bx-check-circle'></i>
+                                            <span>Meet new people</span>
+                                        </div>
+                                    </div>
+                                    <div class="about-contact">
+                                        <h3>Contact Us</h3>
+                                        <p><i class='bx bx-envelope'></i> support@roadbuddy.com</p>
+                                        <p><i class='bx bx-phone'></i> +91 98765 43210</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-panel" id="how-to-use-panel">
+                            <h2>How to Use Road Buddy</h2>
+                            <div class="settings-section">
+                                <div class="how-to-use-content">
+                                    <div class="guide-section">
+                                        <h3>Finding a Ride</h3>
+                                        <ol class="guide-steps">
+                                            <li>
+                                                <div class="step-number">1</div>
+                                                <div class="step-content">
+                                                    <h4>Navigate to Find Ride</h4>
+                                                    <p>Click on the "Find Ride" tab in the main navigation.</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="step-number">2</div>
+                                                <div class="step-content">
+                                                    <h4>Enter Your Details</h4>
+                                                    <p>Enter your origin, destination, and travel date.</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="step-number">3</div>
+                                                <div class="step-content">
+                                                    <h4>Browse Available Rides</h4>
+                                                    <p>Browse through the list of available rides that match your criteria.</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="step-number">4</div>
+                                                <div class="step-content">
+                                                    <h4>Book Your Ride</h4>
+                                                    <p>Click "Book Now" on the ride that suits you best.</p>
+                                                </div>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                    
+                                    <div class="guide-section">
+                                        <h3>Posting a Ride</h3>
+                                        <ol class="guide-steps">
+                                            <li>
+                                                <div class="step-number">1</div>
+                                                <div class="step-content">
+                                                    <h4>Navigate to Post Ride</h4>
+                                                    <p>Click on the "Post Ride" tab in the main navigation.</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="step-number">2</div>
+                                                <div class="step-content">
+                                                    <h4>Enter Route Details</h4>
+                                                    <p>Enter your origin, destination, date, and time.</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="step-number">3</div>
+                                                <div class="step-content">
+                                                    <h4>Add Vehicle Information</h4>
+                                                    <p>Select your vehicle type and enter details.</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="step-number">4</div>
+                                                <div class="step-content">
+                                                    <h4>Set Price and Preferences</h4>
+                                                    <p>Set your price per seat and any preferences.</p>
+                                                </div>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                    
+                                    <div class="guide-section">
+                                        <h3>Safety Tips</h3>
+                                        <ul class="safety-tips">
+                                            <li><i class='bx bx-shield'></i> Always verify the identity of your ride partner</li>
+                                            <li><i class='bx bx-shield'></i> Share your ride details with a friend or family member</li>
+                                            <li><i class='bx bx-shield'></i> Use the in-app messaging to communicate</li>
+                                            <li><i class='bx bx-shield'></i> Use the emergency button if you feel unsafe</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-panel" id="payment-methods-panel">
+                            <h2>Payment Methods</h2>
+                            <div class="settings-section">
+                                <div class="payment-methods-content">
+                                    <div class="payment-methods-header">
+                                        <h3>Your Payment Methods</h3>
+                                        <button class="btn-primary add-payment-method">
+                                            <i class='bx bx-plus'></i> Add New
+                                        </button>
+                                    </div>
+                                    
+                                    <div class="payment-methods-list">
+                                        <!-- Empty state - no payment methods yet -->
+                                        <div class="empty-payment-methods">
+                                            <p>You haven't added any payment methods yet.</p>
+                                            <p>Add a payment method to book rides easily.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Emergency Button -->
+        <button id="emergency-btn" class="emergency-btn">
+            <i class='bx bx-shield-quarter'></i>
+            <span>Emergency</span>
+        </button>
+
+        <!-- Modals -->
+        <div class="modal" id="logout-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Logout Confirmation</h3>
+                    <button class="close-modal"><i class='bx bx-x'></i></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to logout?</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-outline" id="cancel-logout">Cancel</button>
+                    <button class="btn-primary" id="confirm-logout">Logout</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="emergency-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Emergency Alert</h3>
+                    <button class="close-modal"><i class='bx bx-x'></i></button>
+                </div>
+                <div class="modal-body">
+                    <p>Do you really want to share your location with your emergency contacts?</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-outline" id="cancel-emergency">Cancel</button>
+                    <button class="btn-danger" id="confirm-emergency">Confirm</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Delete Confirmation Modal -->
+        <div class="modal" id="delete-confirmation-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Delete Confirmation</h3>
+                    <button class="close-modal"><i class='bx bx-x'></i></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete this ride? This action cannot be undone.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-outline" id="cancel-delete">Cancel</button>
+                    <button class="btn-danger" id="confirm-delete">Delete</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Delete Account Modal -->
+        <div class="modal" id="delete-account-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Delete Account</h3>
+                    <button class="close-modal"><i class='bx bx-x'></i></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to permanently delete your account? This action cannot be undone and all your data will be lost.</p>
+                    <div class="form-group">
+                        <label for="delete-account-password">Enter your password to confirm</label>
+                        <div class="input-with-icon">
+                            <i class='bx bx-lock'></i>
+                            <input type="password" id="delete-account-password" placeholder="Enter your password">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-outline" id="cancel-account-delete">Cancel</button>
+                    <button class="btn-danger" id="confirm-account-delete">Delete My Account</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+    <script>
+        // Additional JavaScript for new requirements
+        document.addEventListener("DOMContentLoaded", () => {
+            // 1. Hide seats option for bike in post ride
+            const transportOptions = document.querySelectorAll('input[name="transport"]');
+            
+            transportOptions.forEach((option) => {
+                option.addEventListener("change", function() {
+                    if (this.value === "bike") {
+                        document.getElementById("bike-details").style.display = "block";
+                        document.getElementById("car-details").style.display = "none";
+                        // For bike, we use a hidden input with value 1
+                    } else if (this.value === "car") {
+                        document.getElementById("bike-details").style.display = "none";
+                        document.getElementById("car-details").style.display = "block";
+                    }
+                });
+            });
+            
+            // 2. Delete functionality with confirmation popup
+            // Add event delegation for delete buttons that might be added dynamically
+            document.addEventListener("click", function(e) {
+                if (e.target.closest(".action-btn.delete")) {
+                    e.preventDefault();
+                    // Store the ride to be deleted
+                    const rideRow = e.target.closest("tr");
+                    const deleteModal = document.getElementById("delete-confirmation-modal");
+                    deleteModal.classList.add("active");
+                    
+                    // Set up the confirm delete button
+                    document.getElementById("confirm-delete").onclick = function() {
+                        if (rideRow) {
+                            rideRow.remove();
+                        }
+                        deleteModal.classList.remove("active");
+                        
+                        // Check if table is empty and show empty state if needed
+                        const tbody = rideRow.closest("tbody");
+                        if (tbody && tbody.children.length === 0) {
+                            const isPosted = tbody.id === "posted-rides-table";
+                            const emptyRow = document.createElement("tr");
+                            emptyRow.className = "empty-state";
+                            emptyRow.innerHTML = `
+                                <td colspan="${isPosted ? '10' : '9'}" class="text-center">
+                                    <p>You haven't ${isPosted ? 'posted' : 'booked'} any rides yet.</p>
+                                    <button class="btn-primary" id="${isPosted ? 'post-first-ride' : 'find-first-ride'}">
+                                        ${isPosted ? 'Post Your First Ride' : 'Find Your First Ride'}
+                                    </button>
+                                </td>
+                            `;
+                            tbody.appendChild(emptyRow);
+                        }
+                    };
+                    
+                    // Set up the cancel delete button
+                    document.getElementById("cancel-delete").onclick = function() {
+                        deleteModal.classList.remove("active");
+                    };
+                }
+            });
+            
+            // 3. Account settings functionality
+            // Change password button
+            const changePasswordBtn = document.getElementById("change-password-btn");
+            const passwordForm = document.querySelector(".password-form");
+            const cancelPasswordChange = document.getElementById("cancel-password-change");
+            
+            if (changePasswordBtn) {
+                changePasswordBtn.addEventListener("click", function() {
+                    passwordForm.style.display = "block";
+                    this.style.display = "none";
+                });
+            }
+            
+            if (cancelPasswordChange) {
+                cancelPasswordChange.addEventListener("click", function() {
+                    passwordForm.style.display = "none";
+                    changePasswordBtn.style.display = "block";
+                    // Clear password fields
+                    document.getElementById("current-password").value = "";
+                    document.getElementById("new-password").value = "";
+                    document.getElementById("confirm-password").value = "";
+                });
+            }
+            
+            // Update password functionality
+            const updatePasswordBtn = document.getElementById("update-password");
+            if (updatePasswordBtn) {
+                updatePasswordBtn.addEventListener("click", function() {
+                    const currentPassword = document.getElementById("current-password").value;
+                    const newPassword = document.getElementById("new-password").value;
+                    const confirmPassword = document.getElementById("confirm-password").value;
+                    
+                    if (!currentPassword || !newPassword || !confirmPassword) {
+                        alert("Please fill in all password fields");
+                        return;
+                    }
+                    
+                    if (newPassword !== confirmPassword) {
+                        alert("New passwords do not match");
+                        return;
+                    }
+                    
+                    // Simulate password update
+                    alert("Password updated successfully!");
+                    passwordForm.style.display = "none";
+                    changePasswordBtn.style.display = "block";
+                    
+                    // Clear password fields
+                    document.getElementById("current-password").value = "";
+                    document.getElementById("new-password").value = "";
+                    document.getElementById("confirm-password").value = "";
+                });
+            }
+            
+            // Delete account functionality
+            const deleteAccountBtn = document.getElementById("delete-account-btn");
+            const deleteAccountModal = document.getElementById("delete-account-modal");
+            const cancelAccountDelete = document.getElementById("cancel-account-delete");
+            const confirmAccountDelete = document.getElementById("confirm-account-delete");
+            
+            if (deleteAccountBtn) {
+                deleteAccountBtn.addEventListener("click", function() {
+                    deleteAccountModal.classList.add("active");
+                });
+            }
+            
+            if (cancelAccountDelete) {
+                cancelAccountDelete.addEventListener("click", function() {
+                    deleteAccountModal.classList.remove("active");
+                    document.getElementById("delete-account-password").value = "";
+                });
+            }
+            
+            if (confirmAccountDelete) {
+                confirmAccountDelete.addEventListener("click", function() {
+                    const password = document.getElementById("delete-account-password").value;
+                    
+                    if (!password) {
+                        alert("Please enter your password to confirm account deletion");
+                        return;
+                    }
+                    
+                    // Simulate account deletion
+                    alert("Your account has been deleted. You will be redirected to the login page.");
+                    window.location.href = "index.html";
+                });
+            }
+            
+            // 4. User profile click to show details
+            const userProfile = document.getElementById("user-profile");
+            const userMenu = document.querySelector(".user-menu");
+            
+            if (userProfile) {
+                userProfile.addEventListener("click", function(e) {
+                    e.stopPropagation(); // Prevent body click from closing it immediately
+                    userMenu.style.display = userMenu.style.display === "block" ? "none" : "block";
+                });
+                
+                // Close menu when clicking outside
+                document.body.addEventListener("click", function() {
+                    userMenu.style.display = "none";
+                });
+                
+                // Prevent menu from closing when clicking inside it
+                userMenu.addEventListener("click", function(e) {
+                    e.stopPropagation();
+                });
+            }
+            
+            // 5. Settings link in user profile
+            const settingsLink = document.querySelector(".settings-link");
+            if (settingsLink) {
+                settingsLink.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    
+                    // Navigate to settings page
+                    const pages = document.querySelectorAll(".page");
+                    pages.forEach(page => page.classList.remove("active"));
+                    document.getElementById("settings-page").classList.add("active");
+                    
+                    // Update navigation
+                    const navItems = document.querySelectorAll(".nav-item");
+                    navItems.forEach(item => item.classList.remove("active"));
+                    document.querySelector('[data-page="settings"]').classList.add("active");
+                    
+                    // Close user menu
+                    userMenu.style.display = "none";
+                    
+                    // Activate the specified settings panel
+                    const settingsName = this.getAttribute("data-settings");
+                    if (settingsName) {
+                        const settingsNavItems = document.querySelectorAll(".settings-nav-item");
+                        const settingsPanels = document.querySelectorAll(".settings-panel");
+                        
+                        settingsNavItems.forEach(item => item.classList.remove("active"));
+                        settingsPanels.forEach(panel => panel.classList.remove("active"));
+                        
+                        document.querySelector(`[data-settings="${settingsName}"]`).classList.add("active");
+                        document.getElementById(`${settingsName}-panel`).classList.add("active");
+                    }
+                });
+            }
+            
+            // 6. Post first ride and find first ride buttons
+            const postFirstRideBtn = document.getElementById("post-first-ride");
+            const findFirstRideBtn = document.getElementById("find-first-ride");
+            
+            if (postFirstRideBtn) {
+                postFirstRideBtn.addEventListener("click", function() {
+                    // Navigate to post ride page
+                    const pages = document.querySelectorAll(".page");
+                    pages.forEach(page => page.classList.remove("active"));
+                    document.getElementById("post-ride-page").classList.add("active");
+                    
+                    // Update navigation
+                    const navItems = document.querySelectorAll(".nav-item");
+                    navItems.forEach(item => item.classList.remove("active"));
+                    document.querySelector('[data-page="post-ride"]').classList.add("active");
+                });
+            }
+            
+            if (findFirstRideBtn) {
+                findFirstRideBtn.addEventListener("click", function() {
+                    // Navigate to find ride page
+                    const pages = document.querySelectorAll(".page");
+                    pages.forEach(page => page.classList.remove("active"));
+                    document.getElementById("find-ride-page").classList.add("active");
+                    
+                    // Update navigation
+                    const navItems = document.querySelectorAll(".nav-item");
+                    navItems.forEach(item => item.classList.remove("active"));
+                    document.querySelector('[data-page="find-ride"]').classList.add("active");
+                });
+            }
+            
+            // 7. Save profile changes
+            const saveProfileBtn = document.getElementById("save-profile");
+            if (saveProfileBtn) {
+                saveProfileBtn.addEventListener("click", function() {
+                    // Simulate saving profile
+                    alert("Profile information updated successfully!");
+                });
+            }
+        });
+    </script>
+</body>
+</html>

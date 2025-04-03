@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ROAD BUDDY</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Navbar with animated highlight -->
+    <div class="navbar">
+        <div class="logo-container">
+            <h1 class="logo"><span>R</span>oad <span>B</span>uddy</h1>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-links">
+            
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="services.html" class="nav-link">Services</a></li>
+            <li><a href="login.html" class="nav-link">Login</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section with Parallax -->
+    <div class="section1" id="parallax">
+        <div class="hero-content">
+            <h1 class="hero-title">Travel Together, Save Together</h1>
+            <p class="hero-subtitle">Join the community of bike poolers and make your commute affordable and eco-friendly</p>
+        </div>
+    </div>
+
+    <!-- Moving vehicles animation -->
+    <div class="vehicles-container">
+        
+        <div class="moving-bike">
+            <img src="https://cdn-icons-png.flaticon.com/512/2972/2972185.png" alt="Bike">
+        </div>
+    </div>
+
+    <!-- Info Cards with Hover Effects -->
+    <div class="section2">
+        <div class="info-cards">
+            <div class="card" data-tilt>
+                <div class="icon icon-rides">
+                    <i class="fas fa-motorcycle"></i>
+                </div>
+                <h3>Our Rides</h3>
+                <p>Discover the most comfortable and safe rides available.</p>
+                <div class="card-overlay"></div>
+            </div>
+            <div class="card" data-tilt>
+                <div class="icon icon-trust">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Trust Us</h3>
+                <p>We are committed to providing top-notch service and reliability.</p>
+                <div class="card-overlay"></div>
+            </div>
+            <div class="card" data-tilt>
+                <div class="icon icon-scroll">
+                    <i class="fas fa-mouse"></i>
+                </div>
+                <h3>Scroll & Explore</h3>
+                <p>Explore everything you need right at your fingertips.</p>
+                <div class="card-overlay"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Why Choose Us Section with Animated Counter -->
+    <!-- <section class="section4">
+        <div class="why-choose-us">
+            <h2 class="reveal-text">Why Should You Prefer Our Website?</h2>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="counter" data-target="5000">0</span>+
+                    <p>Active Users</p>
+                </div>
+                <div class="stat-item">
+                    <span class="counter" data-target="10000">0</span>+
+                    <p>Rides Completed</p>
+                </div>
+                <div class="stat-item">
+                    <span class="counter" data-target="95">0</span>%
+                    <p>Satisfaction Rate</p>
+                </div>
+            </div>
+            <p class="reveal-text">Our website offers an exclusive bike pooling feature, setting us apart from other platforms. Through bike pooling, users can reduce costs, minimize their carbon footprint, and enhance the ease of commuting. Whether seeking a ride or offering one, our platform ensures a smooth and personalized experience to meet your needs.</p>
+            <p class="reveal-text">We are dedicated to fostering eco-friendly, cost-effective transportation solutions while prioritizing the convenience and safety of our users. Join us and be part of the future of ride-sharing today.</p>
+        </div>
+    </section> -->
+
+    <!-- Help Center with Accordion -->
+    <div class="section3">
+        <div class="help-center">
+            <h1 class="section-title">Help Center</h1>
+            <div class="help-container">
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h3>How do I book a Bikepool ride?</h3>
+                            <span class="accordion-icon">+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>You can book a Bikepool ride on our mobile app, or on RoadBuddy.in. Just type in your destination, select the date you would like to travel and select the Bikepool that best suits you! Some rides can be booked immediately, and other rides are manually approved by the driver. Either way, booking a Bikepool ride is quick, easy and convenient.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h3>How do I publish a Bikepool ride?</h3>
+                            <span class="accordion-icon">+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Selling a Bikepool ride on RoadBuddy is simple. To put up your ride, use our mobile app or RoadBuddy.in. Indicate your departure and arrival points, the date and time of your departure how many passengers you can take and the price per seat. You'll also need to choose how you want to accept bookings (either automatically or manually), and you have the option of adding any important details you think your passengers should know about. Then tap 'Publish ride' and you're done!</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h3>How do I cancel my Bikepool ride?</h3>
+                            <span class="accordion-icon">+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>If you need to change your plans, you can always cancel your Bikepool ride from the 'Your rides' page of our app. The sooner you cancel, the better. That way the driver has time to accept new passengers. The amount of your refund will be based on how early you cancel. If you cancel more than 24 hours before departure, for example, you'll receive a full refund, excluding the service fee.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h3>What are the benefits of travelling by Bikepool?</h3>
+                            <span class="accordion-icon">+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>There are multiple advantages to Bikepooling, over other means of transport. Travelling by Bikepool is usually more affordable, especially for longer distances. Bikepooling is also more eco-friendly, as sharing a Bike means there will be fewer Bikes on the road, and therefore fewer emissions. Taking a Bikepool ride is also a safe method of transport during these modern days.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h3>How much does a Bikepool ride cost?</h3>
+                            <span class="accordion-icon">+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>The fares of a Bikepool trip may differ significantly, and are based on factors such as distance, departure time, the demand of that ride and beyond. It is also the responsibility of the person driving to determine how much to charge per seat, so it's difficult to put a precise price tag on a ride. Look at some of our top Bikepool destinations to get an idea of price, or start searching for your next Bikepool ride on RoadBuddy.in.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h3>How do I start Bikepooling?</h3>
+                            <span class="accordion-icon">+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Bikepooling with RoadBuddy is really easy, and for free! Just register for an account and inform us of some basic information about yourself. After you have an account with RoadBuddy, you are able to book or post rides directly on our website or app.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Animated CTA Section -->
+    <div class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Start Your Journey?</h2>
+            <p>Join thousands of users who are already saving money and reducing their carbon footprint</p>
+            <a style="text-decoration: none;" href="signup.html" class="cta-button pulse">Sign Up Now</a>
+        </div>
+        <div class="cta-image">
+            <img src="images/joinus.png" alt="Join us">
+        </div>
+    </div>
+
+    <!-- Footer with Animated Elements -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>We are committed to delivering dependable and sustainable transportation solutions, ensuring that travel remains both affordable and accessible to all individuals.</p>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="/cdn-cgi/l/email-protection#95fcfbf3fad5e7faf4f1f7e0f1f1ecbbf6faf8"><span class="__cf_email__" data-cfemail="650c0b030a25170a0401071001011c4b060a08">[email&#160;protected]</span></a></p>
+                <p>Phone: +91 9876543210</p>
+                <p>Address: Amritanagar Post, Ettimadai, Coimbatore 641 112, Tamil Nadu, INDIA</p>
+                <ul>
+                    <li><a href="feedback.html">FeedBack</a></li>
+                    <li><a href="queries.html">Queries</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="newsletter">
+                    <h4>Subscribe to our Newsletter</h4>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+  
+    <div class="footer-bottom">
+        <p>© 2024 Travel Company | All Rights Reserved by RoadBuddy</p>
+    </div>
+
+    <!-- Emergency Button -->
+    <button class="emergency-btn" id="emergencyBtn">
+        <i class="fas fa-exclamation-triangle"></i>
+        <span class="emergency-tooltip">Emergency</span>
+    </button>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
+
